@@ -4,55 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RESET PASSWORD</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family: 'Inter', sans-serif;
+    font-family:'Poppins',sans-serif;
     letter-spacing:0.3px;
 }
 
 .title{
-    color:white;
-    font-size:24px;
-    margin-bottom:12px;
-    letter-spacing:2px;
-    text-align:center;
-    text-shadow:0 4px 12px rgba(0,0,0,.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
 
-    position:relative;
-    padding-bottom:5px;
+    font-size:34px;
+    font-weight:800;
+    color:#ffffff;
+
+    letter-spacing:2px;
+
+    text-align:center;
+
+    margin-top:3px;
+    margin-bottom:20px;
+
+    text-shadow:
+        0 0 10px rgba(59,130,246,0.25);
 }
 
-.title::after{
-    content:"";
-    position:absolute;
 
-    left:50%;
-    bottom:0;
-
-    transform:translateX(-50%);
-
-    width:200px;
-    height:3px;
-
-    border-radius:10px;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        #60a5fa,
-        #ffffff,
-        #60a5fa,
-        transparent
-    );
-
-    box-shadow:
-        0 0 10px rgba(96,165,250,0.7),
-        0 0 18px rgba(255,255,255,0.35);
+.title-logo{
+    width:50px;
+    height:50px;
 }
 
 body{
@@ -89,7 +76,7 @@ html, body{
 
     border-radius: 24px;
 
-    border: 2px solid rgba(59, 130, 246, 0.7);
+    border: 1px solid rgba(59, 130, 246, 0.7);
     background: url("bg/gambar9.jpg")center;
 	
     backdrop-filter: blur(14px);
@@ -102,49 +89,103 @@ html, body{
     transition: 0.3s ease;
 
     animation: fadeUp 0.6s ease;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
 .input-box{
-    margin-bottom:18px;
-    animation:fadeDown .5s ease;
+
+margin-bottom:20px;
+
 }
 
-input{
-    width:100%;
-    height:56px;
 
-    appearance:none;
-    -webkit-appearance:none;
 
-    padding:16px 18px;
-    border:none;
-    outline:none;
-    border-radius:18px;
+.field{
 
-    font-size:16px;
-    
-    text-align:center;
+display:flex;
+align-items:center;
 
-    background: rgba(2, 6, 23, 0.6);
-    border: 1px solid rgba(59, 130, 246, 0.7);
+height:55px;
 
-    box-shadow: 0 0 12px rgba(59,130,246,0.25);
+background:#fff;
 
-    color:#ffffff;
+border-radius:12px;
 
-    transition: box-shadow .25s ease;
+overflow:hidden;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.15);
+
+transform:translateZ(0);
+
+-webkit-transform:translateZ(0);
+
 }
 
-input:focus{
-    box-shadow:
-        0 0 0 2px rgba(59,130,246,0.45),
-        0 8px 22px rgba(0,0,0,0.22),
-        inset 0 1px 6px rgba(255,255,255,0.04);
+
+.icon-box{
+
+    width:55px;
+    height:55px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #0ea5e9
+    );
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:10px 0 0 10px;
 }
 
-input::placeholder{
-    color:rgba(255,255,255,.75);
+
+
+.field input{
+
+flex:1;
+
+height:100%;
+
+border:none;
+
+outline:none;
+
+padding:0 15px;
+
+border-radius:0 12px 12px 0;
+
+background:#fff;
+
+}
+
+
+
+.field input::placeholder{
+
+color:#999;
+
+}
+
+
+
+.field:focus-within{
+
+box-shadow:
+0 0 0 2px rgba(59,130,246,.35);
+
+}
+
+.field,
+.field input,
+.icon-box{
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
 }
 
 .forgot{
@@ -181,25 +222,6 @@ input::placeholder{
     overflow:hidden;
 }
 
-.card p{
-    padding: 12px 14px;
-    margin: 12px 0;
-    font-size: 16px;
-
-    color: #ffffff;
-
-    border-radius: 12px;
-    background: rgba(2, 6, 23, 0.6);
-    border: 1px solid rgba(59, 130, 246, 0.7);
-    box-shadow: 0 0 12px rgba(59,130,246,0.25);
-}
-
-#usernameText,
-#password{
-    color:#ffffff;
-    font-weight:600;
-	
-}
 
 
 .label{
@@ -243,9 +265,9 @@ button {
 }
 
 #copyBtn{
-    margin:14px auto 0;
+    margin:20px auto 0;
 
-    width:130px;
+    width:180px;
     height:42px;
 
     border:none;
@@ -347,21 +369,161 @@ filter:blur(1px);
 }
 
 .brand{
+    margin-top:14px;
+
+    display:block;
+    width:fit-content;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    font-size:9px;
+
+    font-weight:600;
+    letter-spacing:0.6px;
+
+    color:rgba(255,255,255,0.9);
+
+    padding:2px 6px;   
+
+    border-radius:6px;
+
+    border:1px solid rgba(96,165,250,0.25);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+	text-shadow:
+    0 1px 2px rgba(0,0,0,0.8),
+    0 0 8px rgba(255,255,255,0.15);
+}
+
+.brand{
     position:relative;
-    z-index:5;
+    top:-20px;
+}
+	
+.resultBox{
+    margin-bottom:5px;
+}
 
-    text-align:center;
 
-    color:#ffffff;
-    font-size:11px;
-    font-weight:700;
+.resultBox label{
 
-    margin-top:-28px;
+display:block;
 
-    letter-spacing:0.5px;
+margin-bottom:8px;
 
-    text-shadow:
-        0 1px 2px rgba(0,0,0,0.6);
+padding-left:4px;
+
+font-size:13px;
+
+font-weight:700;
+
+color:white;
+
+letter-spacing:.5px;
+
+}
+
+
+
+.resultBox p{
+
+position:relative;
+font-family:'Poppins',sans-serif;
+
+justify-content:flex-start;
+
+letter-spacing:.3px;
+display:flex;
+
+align-items:center;
+
+height:55px;
+
+padding-left:75px;
+
+padding-right:15px;
+
+
+border-radius:10px;
+
+background:white;
+
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.18);
+
+}
+
+
+
+.resultBox p::before{
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#0ea5e9
+);
+
+color:white;
+
+}
+
+.resultBox p::before{
+
+position:absolute;
+
+left:0;
+top:0;
+
+width:55px;
+height:55px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#0ea5e9
+);
+
+font-size:20px;
+
+border-radius:10px 0 0 10px;
+
+content:"👤";
+
+}
+
+
+.passwordBox p::before{
+
+content:"🔐";
+
+}
+
+
+
+#usernameText,
+#password{
+
+font-size:15px;
+
+font-weight:600;
+
+color:#111827;
+
+font-family:'Poppins',sans-serif;
+
+letter-spacing:.3px;
+
+word-break:break-word;
+
 }
 	
 </style>
@@ -373,17 +535,60 @@ filter:blur(1px);
 <div class="container">
 
     <div class="input-box">
-       <h2 class="title">⚡RESET PASSWORD⚡</h2>
-	
-	   <input type="text" id="username" placeholder="Masukkan Username" oninput="generateData()">
-		
+
+<div class="title">
+	<img src="bg/gambar5.jpg" alt="Logo" class="title-logo">
+		RESET PASSWORD
     </div>
+	<div class="title-line"></div>
+
+
+<div class="field">
+
+<div class="icon-box">
+👤
+</div>
+
+<input
+type="text"
+id="username"
+placeholder="Masukkan ID"
+oninput="generateData()">
+
+</div>
+
+</div>
 
     <div class="card">
-    <p>🧑 Username : <span id="usernameText"></span></p>
-    <p>🔒 Password : <span id="password"></span></p>
 
-    <button id="copyBtn" onclick="copyData()">SALIN</button>
+    <div class="resultBox">
+
+        <label>Username</label>
+
+        <p>
+            <span id="usernameText"></span>
+        </p>
+
+    </div>
+
+
+    <div class="resultBox passwordBox">
+
+        <label>Password</label>
+
+        <p>
+            <span id="password"></span>
+        </p>
+
+    </div>
+
+</div>
+
+
+<button id="copyBtn" onclick="copyData()">
+    SALIN
+</button>
+
 </div>
 
 </div>
@@ -434,7 +639,7 @@ function copyData() {
         void btn.offsetWidth;
 
         btn.classList.add("success");
-        btn.innerText = "✔";
+        btn.innerText = "✅ TERSALIN";
 
         // HANYA RESET INPUT
         let input = document.getElementById("username");
